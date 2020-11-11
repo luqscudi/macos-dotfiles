@@ -1,0 +1,58 @@
+# open iterm
+cmd - return : ~/.local/bin/open-iterm
+
+# kill focused window
+cmd + shift - q : yabai -m window --close
+
+# launcher
+# spotlight set to cmd - p in system settings
+
+# focusing
+cmd - left: yabai -m window --focus west
+cmd - down: yabai -m window --focus south
+cmd - up: yabai -m window --focus north
+cmd - right: yabai -m window --focus east
+
+# move window
+cmd + shift - left : yabai -m window --swap west
+cmd + shift - down : yabai -m window --swap south
+cmd + shift - up : yabai -m window --swap north
+cmd + shift - right : yabai -m window --swap east
+
+# move focused window to workspace
+cmd + shift - 0x12 : yabai -m window --space 1
+cmd + shift - 0x13 : yabai -m window --space 2
+cmd + shift - 0x14 : yabai -m window --space 3
+
+# switch to workspace
+cmd - 0x12 : yabai -m space --focus 1
+cmd - 0x13 : yabai -m space --focus 2
+cmd - 0x14 : yabai -m space --focus 3
+
+# split
+cmd - h : yabai -m window --insert south
+cmd - v : yabai -m window --insert east
+
+# fullscreen focused window
+cmd - f : yabai -m window --toggle zoom-fullscreen
+
+#float
+cmd + shift - space : yabai -m window --toggle float; yabai -m window --grid 4:4:1:1:2:2
+
+#resize mode
+:: default : yabai -m config window_border off
+:: resize @ : yabai -m config window_border on
+
+cmd - r ; resize
+resize < return ; default
+resize < escape ; default
+resize < cmd - r ; default
+
+resize < left : yabai -m window --resize left:-10:0; yabai -m window --resize right:-8:0
+resize < right : yabai -m window --resize left:8:0; yabai -m window --resize right:10:0
+
+resize < down : yabai -m window --resize top:0:10; yabai -m window --resize bottom:0:8
+resize < up : yabai -m window --resize top:0:-8; yabai -m window --resize bottom:0:-10
+
+#custom picture in picture
+cmd -  : yabai -m window --toggle float; yabai -m window --toggle topmost; yabai -m window --toggle shadow 
