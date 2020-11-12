@@ -1,5 +1,7 @@
 # macos-dotfiles
 
-## Dependencies
+dependencies:
 * yabai
 * skhd
+* iterm2
+
